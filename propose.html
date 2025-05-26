@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hey Teddy 🧸</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to top, lavender, #87ceeb);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+    .cockpit {
+      background: url('https://i.ibb.co/V3LRnbV/cockpit-overlay.png') center center no-repeat;
+      background-size: cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      opacity: 0.2;
+    }
+    .content {
+      position: relative;
+      z-index: 2;
+      top: 30vh;
+    }
+    .buttons button {
+      font-size: 20px;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      background: #fff;
+      color: #333;
+      transition: 0.3s;
+    }
+    .buttons button:hover {
+      background: #ff69b4;
+      color: white;
+    }
+    .gallery, .fireworks {
+      display: none;
+    }
+    .gallery img {
+      width: 80vw;
+      max-width: 400px;
+      margin: 10px auto;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #fff;
+    }
+    .fireworks {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      pointer-events: none;
+      background: url('https://i.ibb.co/mhv5cJM/fireworks.gif') center center no-repeat;
+      background-size: cover;
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="cockpit"></div>
+  <div class="content">
+    <h1>Hey Teddy 🧸</h1>
+    <h2>Will you be mine forever?</h2>
+    <div class="buttons">
+      <button onclick="sayYes()">Yes ❤️</button>
+      <button onclick="sayNo()">No 😅</button>
+    </div>
+    <div class="gallery" id="gallery">
+      <img src="img1.jpg" />
+      <img src="img2.jpg" />
+      <img src="img3.jpg" />
+      <img src="img4.jpg" />
+      <img src="img5.jpg" />
+    </div>
+    <div class="fireworks" id="fireworks"></div>
+    <h3 id="finalMessage"></h3>
+  </div>
+  <audio autoplay loop id="bgmusic">
+    <source src="ranjhan.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    function sayYes() {
+      document.getElementById('fireworks').style.display = 'block';
+      document.getElementById('gallery').style.display = 'block';
+      document.querySelector('h1').innerText = 'You said YES Teddy ❤️';
+      document.querySelector('h2').innerText = 'Let’s make every sunset ours!';
+      document.body.style.background = 'linear-gradient(to bottom, #000428, #004e92)';
+      document.getElementById('finalMessage').innerText = 'From Rabbi 💖';
+    }
+    function sayNo() {
+      alert('Oops! Wrong answer Teddy! Think again... 😜');
+    }
+  </script>
+</body>
+</html>
